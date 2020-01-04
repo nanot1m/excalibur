@@ -2,16 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import rough from "roughjs/bin/wrappers/rough";
 import { RoughCanvas } from "roughjs/bin/canvas";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMousePointer,
-  faSquare,
-  faCircle,
-  faLongArrowAltRight,
-  faFont
-} from "@fortawesome/free-solid-svg-icons";
 
 import { moveOneLeft, moveAllLeft, moveOneRight, moveAllRight } from "./zindex";
+
+import SvgMousePointer from "./icons/MousePointer";
+import SvgSquare from "./icons/Square";
+import SvgCircle from "./icons/Circle";
+import SvgArrowRight from "./icons/ArrowRight";
+import SvgFont from "./icons/Font";
 
 import "./styles.scss";
 
@@ -744,23 +742,23 @@ const KEYS = {
 
 const SHAPES = [
   {
-    icon: faMousePointer,
+    icon: <SvgMousePointer />,
     value: "selection"
   },
   {
-    icon: faSquare,
+    icon: <SvgSquare />,
     value: "rectangle"
   },
   {
-    icon: faCircle,
+    icon: <SvgCircle />,
     value: "ellipse"
   },
   {
-    icon: faLongArrowAltRight,
+    icon: <SvgArrowRight />,
     value: "arrow"
   },
   {
-    icon: faFont,
+    icon: <SvgFont />,
     value: "text"
   }
 ];
@@ -1000,9 +998,7 @@ class App extends React.Component<{}, AppState> {
                     this.forceUpdate();
                   }}
                 />
-                <div className="toolIcon">
-                  <FontAwesomeIcon icon={icon} />
-                </div>
+                <div className="toolIcon">{icon}</div>
               </label>
             ))}
           </div>

@@ -1,0 +1,12 @@
+import React, { SVGProps } from "react";
+
+const SvgCircle = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 512 512" width="1em" height="1em" {...props}>
+    <path
+      fill="currentColor"
+      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+    />
+  </svg>
+);
+
+export default SvgCircle;
